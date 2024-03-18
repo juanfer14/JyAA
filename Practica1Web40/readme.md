@@ -1,20 +1,19 @@
 2. Escriba un servlet llamado Bienvenida que tome el nombre del usuario del requerimiento http que recibe como parámetro y devuelve una página HTML que dice “Bienvenido ” + nombre (donde nombre es el dato recibe como entrada).  La clase del servlet debe residir en el paquete misservlets. Sobreescriba solo el método doGet(). 
 Debe escribir una página HTML llamada saludo.html, que contenga un formulario con un campo de entrada de texto, en donde el usuario escribirá su nombre y un botón de tipo submit para enviar los datos del formulario al servlet Bienvenida para su procesamiento. 
+
+	a) Ejecute el servlet y pruebe desde el navegador. 
+
+	b) Modifique el archivo saludo.html y utilice el método “POST” para enviar los datos del formulario al servlet Bienvenida. ¿Necesita hacer algún cambio en el código del servlet?  
 	
-a) Ejecute el servlet y pruebe desde el navegador. 
+	__Se debe definir el metodo doPost() para poder responder el metodo “POST”__
 
-b) Modifique el archivo saludo.html y utilice el método “POST” para enviar los datos del formulario al servlet Bienvenida. ¿Necesita hacer algún cambio en el código del servlet?  
-	
-__Se debe definir el metodo doPost() para poder responder el metodo “POST”__
+	c) Analice nuevamente las carpetas WEB-INF\classes 
 
-c) Analice nuevamente las carpetas WEB-INF\classes 
+	__La carpeta “WEB-INF\classes\misservlets\” contiene el archivo “Bienvenida.class”__
 
-__La carpeta “WEB-INF\classes\misservlets\” contiene el archivo “Bienvenida.class”__
+	d) Pruebe acceder a su página saludo.html desde el navegador de su compañero. ¿Funciono? ¿Por qué?
 
-d) Pruebe acceder a su página saludo.html desde el navegador de su compañero. ¿Funciono? ¿Por qué?
-
-e) ¿Cuáles son las diferencias entre: la estructura del proyecto que está desarrollando con el IDE y la estructura de la aplicación Web que está ejecutándose en el servidor? Confeccione un diagrama jerárquico de cada una de las estructuras y muestre la relación de contenido que existe entre ellos. 
-
+	e) ¿Cuáles son las diferencias entre: la estructura del proyecto que está desarrollando con el IDE y la estructura de la aplicación Web que está ejecutándose en el servidor? Confeccione un diagrama jerárquico de cada una de las estructuras y muestre la relación de contenido que existe entre ellos. 
 2. Escriba un servlet llamado ContadorVisitas que mantiene actualizada la cantidad de requerimientos o visitas que recibe. Cada vez que recibe un requerimiento incrementa la cantidad y devuelve una página HTML que dice: “Este servlet lo visitaron: X usuario/s” (X es la cantidad de visitas). La clase del servlet debe residir en el paquete misservlets. No utilice variables de clase para mantener la cantidad de visitas. 
 Nota: ejecute el servlet desde el navegador Web. Mantenga abiertas al menos tres instancias del navegador. Ejecute el servlet varias veces desde cada una de las ventanas. Ejecútelo desde el navegador de su compañero. 
 Si no llega a obtener los resultados esperados, analice la configuración del navegador (uso de archivos temporales).
