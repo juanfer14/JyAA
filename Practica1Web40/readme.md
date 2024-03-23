@@ -36,6 +36,5 @@ La página que devuelve el servlet debe contener:
 a) Ejecute el servlet desde el navegador. Abra más de un navegador.  Modifique la página __mascotas.html__ reemplazando los *check-boxes* por una lista de selección múltiple HTML con el mismo nombre que le asignó a los *check-boxes*. 
 
 b) ¿Necesita modificar el código del servlet?
-
-__No es necesario modificar el codigo del servlet.__
+__Si es necesario modificar el código del servlet, ya que ahora debe obtener una lista de múltiples opciones. El método que permite obtener las opciones elegidas es “getParameterValues()”.__
 
