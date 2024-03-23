@@ -49,12 +49,14 @@ public class Encuesta extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
-    private boolean sumarMascota(String mascota) {
-    	if(mascota != null && !mascota.isEmpty() && hashPet.get(mascota) != null) {
-    		mascotas[hashPet.get(mascota)]++;
-    		return true;
-    	}
-    	return false;
+    private boolean sumarMascota(String [] elegidos) {
+    	if(elegidos == null) return false;
+    	
+    	for(String mascota: elegidos)
+    		if(hashPet.get(mascota) != null)
+	    		mascotas[hashPet.get(mascota)]++;
+    	
+    	return true;
     }
     
     private int getPuntajeMax() {
@@ -73,7 +75,8 @@ public class Encuesta extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
-		boolean ok = this.sumarMascota(request.getParameter("mascota"));
+		String [] elegidos = request.getParameterValues("mascota");
+		boolean ok = this.sumarMascota(elegidos);
 		
 		out.println("<html>");
 		out.println("<head>");

@@ -6,15 +6,21 @@
 </head>
 <body>
 	<form action="/misServlets/encuesta" action="get">
-		<select name="mascota" id="mascota">
-			<option value="">Seleccione una opcion...</option>
-			<option value="perro">Perro</option>
-			<option value="gato">Gato</option>
-			<option value="hamster">Hamster</option>
-			<option value="tortuga">Tortuga</option>
-			<option value="loro">Loro</option>
-			<option value="conejo">Conejo</option>
-		</select>
+		<fieldset>
+			<legend>Elija las mascotas que mas le guste...</legend>
+			<input type="checkbox" id="perro" name="mascota" value="perro">
+			<label for="perro">Perro</label>
+			<input type="checkbox" id="gato" name="mascota" value="gato">
+			<label for="perro">Gato</label>
+			<input type="checkbox" id="hamster" name="mascota" value="hamster">
+			<label for="perro">Hamster</label>
+			<input type="checkbox" id="tortuga" name="mascota" value="tortuga">
+			<label for="perro">Tortuga</label>
+			<input type="checkbox" id="loro" name="mascota" value="loro">
+			<label for="perro">Loro</label>
+			<input type="checkbox" id="conejo" name="mascota" value="conejo">
+			<label for="perro">Conejo</label>
+		</fieldset>
 		<input type="submit" value="Enviar">
 	</form>
 </body>

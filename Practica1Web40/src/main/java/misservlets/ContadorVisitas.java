@@ -40,12 +40,13 @@ public class ContadorVisitas extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		HttpSession session = request.getSession();
-		Integer visitas = (Integer) session.getAttribute("visitas");
+		ServletContext s = this.getServletContext();
+		Object atr = s.getAttribute("visitas");
+		int visitas;
 		
-		if(visitas == null)
+		if(atr == null)
 			visitas = 0;
-		visitas++;
+		else visitas = (int) atr + 1;
 		
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
@@ -57,7 +58,7 @@ public class ContadorVisitas extends HttpServlet {
 		out.println("</body>");
 		out.println("</head>");
 		out.println("</html>");
-		session.setAttribute("visitas", visitas);
+		s.setAttribute("visitas", visitas);
 		out.close();
 		
 		
