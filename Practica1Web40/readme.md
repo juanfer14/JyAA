@@ -37,5 +37,5 @@ a) Ejecute el servlet desde el navegador. Abra más de un navegador.  Modifique 
 
 b) ¿Necesita modificar el código del servlet?
 
-__No es necesario modificar el codigo del servlet.__
+__Si es necesario modificar el código del servlet, ya que ahora debe obtener una lista de múltiples opciones. El método que permite obtener las opciones elegidas es “getParameterValues()”.__
 
