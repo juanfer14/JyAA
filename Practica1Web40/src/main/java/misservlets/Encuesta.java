@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
+import java.util.stream.Stream;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -24,47 +25,44 @@ import jakarta.servlet.http.HttpServletResponse;
 )
 public class Encuesta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private int [] mascotas;
 	private Map<String, Integer> hashPet;
-	private Vector<String> nombres;
     /**
      * Default constructor. 
      */
     public Encuesta() {
-    	nombres = new Vector<>();
-    	nombres.add("Perro");
-    	nombres.add("Gato");
-    	nombres.add("Hamster");
-    	nombres.add("Tortuga");
-    	nombres.add("Loro");
-    	nombres.add("Conejo");
-    	mascotas = new int[nombres.size()];
     	hashPet = new HashMap<>();
-    	hashPet.put("perro", 0);
-    	hashPet.put("gato", 1);
-    	hashPet.put("hamster", 2);
-    	hashPet.put("tortuga", 3);
-    	hashPet.put("loro", 4);
-    	hashPet.put("conejo", 5);
+    	hashPet.put("Perro", 0);
+    	hashPet.put("Gato", 0);
+    	hashPet.put("Hamster", 0);
+    	hashPet.put("Tortuga", 0);
+    	hashPet.put("Loro", 0);
+    	hashPet.put("Conejo", 0);
         // TODO Auto-generated constructor stub
     }
     
     private boolean sumarMascota(String [] elegidos) {
     	if(elegidos == null) return false;
     	
-    	for(String mascota: elegidos)
-    		if(hashPet.get(mascota) != null)
-	    		mascotas[hashPet.get(mascota)]++;
+    	for(String mascota: elegidos) {
+    		Integer cant = hashPet.get(mascota);
+    		System.out.println(cant);
+    		if(cant != null)
+	    		hashPet.put(mascota, cant+1);
+    	}
     	
     	return true;
     }
     
+    private Stream<Integer> getStream() {
+    	return hashPet.values().stream();
+    }
+    
     private int getPuntajeMax() {
-    	return Arrays.stream(mascotas).max().getAsInt();
+    	return this.getStream().max(Integer::compareTo).orElse(0);
     }
     
     private long getCantTotal() {
-    	return Arrays.stream(mascotas).reduce(0, Integer::sum);
+    	return this.getStream().mapToLong(Integer::longValue).sum();
     }
     
 
@@ -90,30 +88,12 @@ public class Encuesta extends HttpServlet {
 					out.println("<th>Mascota</th>");
 					out.println("<th>Votos</th>");
 				out.println("</tr>");
-				out.println("<tr>");
-					out.println("<td>Perro</td>");
-					out.println("<td>" + mascotas[0] + "</td>");
-				out.println("</tr>");
-				out.println("<tr>");
-					out.println("<td>Gato</td>");
-					out.println("<td>" + mascotas[1] + "</td>");
-				out.println("</tr>");
-				out.println("<tr>");
-					out.println("<td>Hamster</td>");
-					out.println("<td>" + mascotas[2] + "</td>");
-				out.println("</tr>");
-				out.println("<tr>");
-					out.println("<td>Tortuga</td>");
-					out.println("<td>" + mascotas[3] + "</td>");
-				out.println("</tr>");
-				out.println("<tr>");
-					out.println("<td>Loro</td>");
-					out.println("<td>" + mascotas[4] + "</td>");
-				out.println("</tr>");
-				out.println("<tr>");
-					out.println("<td>Conejo</td>");
-					out.println("<td>" + mascotas[5] + "</td>");
-				out.println("</tr>");
+				for(String clave: hashPet.keySet()) {
+					out.println("<tr>");
+						out.println("<td>" + clave + "</td>");
+						out.println("<td>" + hashPet.get(clave) + "</td>");
+					out.println("</tr>");
+				}
 			out.println("</table>");
 			
 			
@@ -122,9 +102,9 @@ public class Encuesta extends HttpServlet {
 			double porcentaje = ((double)puntajeMax/total) * 100;
 			
 			if(puntajeMax > 0) {
-				for(int i = 0; i < nombres.size(); i++) {
-					if(mascotas[i] == puntajeMax) {
-						out.println("<h1>Animal mas votado: " + nombres.get(i) + "</h1>");
+				for(String clave: hashPet.keySet()) {
+					if(hashPet.get(clave) == puntajeMax) {
+						out.println("<h1>Animal mas votado: " + clave + "</h1>");
 						out.println("<h2>Porcentaje: " + String.format("%.2f",porcentaje) + "</h2>");
 					}
 				}
