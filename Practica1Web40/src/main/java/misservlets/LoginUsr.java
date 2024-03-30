@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.List;
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
@@ -26,15 +27,24 @@ import jakarta.servlet.http.HttpServletResponse;
 )
 public class LoginUsr extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private List<String> users;
+	private List<String> passw;
 
     /**
      * Default constructor. 
      */
     public LoginUsr() {
         // TODO Auto-generated constructor stub
+    	
     }
     
-    
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		users = Arrays.asList(getInitParameter("users").split(" ")); 
+		passw = Arrays.asList(getInitParameter("passwords").split(" "));
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -42,8 +52,7 @@ public class LoginUsr extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		List<String> users = Arrays.asList(getInitParameter("users").split(" ")); 
-		List<String> passw = Arrays.asList(getInitParameter("passwords").split(" "));
+		
 		PrintWriter out = response.getWriter();
 		
 		out.println("<html>");

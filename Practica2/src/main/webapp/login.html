@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+</head>
+<body>
+	<form action="/compras/LoginUsr" method="POST">
+		<label for="usuario">Nombre de usuario:</label><br>
+		<input type="text" id="usuario" name="usuario"><br>
+		<label for="pass">Contraseña:</label><br>
+		<input type="password" id="pass" name="pass"><br>
+		<label for="nombre">Apellido y Nombre:</label><br>
+		<input type="text" id="nombre" name="nombre"><br>
+		<label for="codigo">Codigo postal:</label><br>
+		<input type="text" id="codigo" name="codigo" pattern="[0-9]{4}"><br>
+		<br>
+		<input type="submit" value="Login">
+	</form>
+</body>
+</html>
