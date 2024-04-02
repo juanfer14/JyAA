@@ -10,7 +10,7 @@ Cree un proyecto Web dinámico de nombre **Practica2**. Asigne como nombre de la
 1. La aplicación Web compras debe permitir elegir golosinas desde una lista y comprarlas. La aplicación requiere autenticación. El diagrama de navegación de la aplicación es el siguiente:
 
 <p align="center">
-  <img src="/Practica2/assets/figura1.png" alt="Flujo de los servlets" width="75%" height="75%">
+  <img src="JyAA/Practica2/assets/figura1.png" alt="Flujo de los servlets" width="75%" height="75%">
 </p>
 
 Descripción de cada componente:
