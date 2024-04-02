@@ -11,7 +11,9 @@ Cree un proyecto Web dinámico de nombre **Practica2**. Asigne como nombre de la
 
 ![Flujo de los servlets](/Practica2/assets/figura1.png)
 
-__Descripción de cada componente__:
+Descripción de cada componente:
+------------------------------
+
 (Ubique las clases de los servlets en el paquete misservlets.practica2)
 - **login.html**: es un formulario HTML con cuatro campos de texto: nombre de usuario, contraseña, apellido y nombres y dirección postal y, un botón submit que permite enviar los datos del formulario al servlet **LoginUsr**. La página debe contener un título. **Recuerde que
 este es el punto de entrada para ejecutar la aplicación**.
