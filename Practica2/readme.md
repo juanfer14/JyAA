@@ -34,7 +34,7 @@ Finalmente, el botón _submit_ envía el requerimiento al servlet **Facturar**.
 Los datos de las golosinas, se cargan en memoria, cuando se inicializa el servlet (en el método **init()** del servlet) a partir de parámetros de inicialización que se leen del archivo **web.xml**. En el **web.xml**, en la declaración del servlet **Productos**, podría declarar por ejemplo los siguientes productos (nombre, valor):
 
 <p align="center">
-  <img src="/Practica2/assets/figura2.png" alt="Flujo de los servlets" width="50%" height="50%">
+  <img src="/Practica2/assets/figura2.png" alt="Flujo de los servlets" width="75%" height="75%">
 </p>
 
 La página HTML resultante de ejecutar el servlet **Productos**, mostrará actualizada la cantidad de golosinas que el usuario va a comprar. Esto significa que inicialmente dichas cantidades tienen el valor cero, y que cada vez que se ejecuta el servlet, estas cantidades se actualizarán
