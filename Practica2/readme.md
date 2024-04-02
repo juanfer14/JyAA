@@ -14,7 +14,7 @@ Cree un proyecto Web dinámico de nombre **Practica2**. Asigne como nombre de la
 Descripción de cada componente:
 ------------------------------
 
-(Ubique las clases de los servlets en el paquete misservlets.practica2)
+(Ubique las clases de los servlets en el paquete **misservlets.practica2**)
 - **login.html**: es un formulario HTML con cuatro campos de texto: nombre de usuario, contraseña, apellido y nombres y dirección postal y, un botón submit que permite enviar los datos del formulario al servlet **LoginUsr**. La página debe contener un título. **Recuerde que
 este es el punto de entrada para ejecutar la aplicación**.
 
@@ -24,6 +24,13 @@ Además de la funcionalidad anterior, este servlet debe:
 + Si el usuario ingresado es **válido** -> se recupera la sesión del usuario, se almacenan todos sus datos y luego se redirecciona el requerimiento http al servlet **Productos**.
 + Si el usuario ingresado es **inválido** -> el requerimiento http se redirecciona nuevamente a **login.html** para permitirle al usuario corregir los datos ingresados.
 
-Ayuda: tenga en cuenta que el método _sendRedirect(URL)_ de la interface _HttpServletResponse_ redirecciona la respuesta a la URL pasada como parámetro. Por ejemplo: **response.sendRedirect(“/compras/productos”);**
+**Ayuda**: tenga en cuenta que el método _sendRedirect(URL)_ de la interface _HttpServletResponse_ redirecciona la respuesta a la URL pasada como parámetro. Por ejemplo: **response.sendRedirect(“/compras/productos”);**
+
+- **Productos**: es un servlet que dinámicamente arma un formulario HTML, que incluye una tabla HTML con tres columnas: nombres de las golosinas (no editable), precio unitario (no editable) y un campo de texto en donde el usuario ingresará la cantidad a comprar. 
+Finalmente, el botón _submit_ envía el requerimiento al servlet **Facturar**.
+
+Los datos de las golosinas, se cargan en memoria, cuando se inicializa el servlet (en el método **init()** del servlet) a partir de parámetros de inicialización que se leen del archivo **web.xml**. En el **web.xml**, en la declaración del servlet **Productos**, podría declarar por ejemplo los siguientes productos (nombre, valor):
+
+![Datos de las golosinas](/Practica2/assets/figura2.png)
 
 2. 
