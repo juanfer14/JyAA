@@ -55,7 +55,7 @@ Ejemplo, si se tiene:
   * response.sendRedirect(response.encodeRedirectURL("/compras/Productos"));
 
 Otro ejemplo es:
-  * <a href=\"/compras/Productos\" >Productos</a>, se debe reemplazar por
-  * <a href=\"" + response.encodeURL("/compras/Productos") + "\" >Productos</a>
+  * href=\"/compras/Productos\" --> se debe reemplazar por
+  * href=\"" + response.encodeURL("/compras/Productos") + "\"
 
 4. Ejecute el servlet **Productos** directamente (botón derecho sobre Productos -> Run On Server…). ¿Es correcto que un usuario ingrese a la aplicación desde cualquier componente, sin previa autenticación?. ¿Cómo haría para rechazarlo?.
