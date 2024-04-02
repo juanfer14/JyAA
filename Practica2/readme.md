@@ -22,10 +22,8 @@ este es el punto de entrada para ejecutar la aplicación**.
 
 - **LoginUsr**: es un servlet que autentica al usuario en la aplicación, tiene la misma funcionalidad que el servlet **LoginUsr** del **ejercicio 4 de la práctica 1**: el método init() debe inicializar una variable de instancia del servlet, de tipo Hashtable llamada **logins**, con los parámetros de inicialización del **web.xml**. La tabla **logins** mantendrá como clave el nombre del usuario y como valor la contraseña.
 Además de la funcionalidad anterior, este servlet debe:
-
   + Si el usuario ingresado es **válido** -> se recupera la sesión del usuario, se almacenan todos sus datos y luego se redirecciona el requerimiento http al servlet **Productos**.
   + Si el usuario ingresado es **inválido** -> el requerimiento http se redirecciona nuevamente a **login.html** para permitirle al usuario corregir los datos ingresados.
-
 **Ayuda**: tenga en cuenta que el método _sendRedirect(URL)_ de la interface _HttpServletResponse_ redirecciona la respuesta a la URL pasada como parámetro. Por ejemplo: **response.sendRedirect(“/compras/productos”);**
 
 - **Productos**: es un servlet que dinámicamente arma un formulario HTML, que incluye una tabla HTML con tres columnas: nombres de las golosinas (no editable), precio unitario (no editable) y un campo de texto en donde el usuario ingresará la cantidad a comprar. 
@@ -49,4 +47,6 @@ requerimiento al servlet **TerminarSesion**.
 
 - **TerminarSesion**: es un servlet que invalida la sesión del usuario, pues el usuario ya terminó de comprar y redirecciona el requerimiento a la página **login.html**. No tiene pantalla asociada.
 
-2. 
+2. Configure el navegador para que no acepte cookies. ¿La aplicación web **compras** sigue funcionando?. En caso de no funcionar correctamente, escriba una solución.
+
+3. Ejecute el servlet **Productos** directamente (botón derecho sobre Productos -> Run On Server…). ¿Es correcto que un usuario ingrese a la aplicación desde cualquier componente, sin previa autenticación?. ¿Cómo haría para rechazarlo?.
