@@ -54,3 +54,7 @@ requerimiento al servlet **TerminarSesion**.
 
 
 4. Ejecute el servlet **Productos** directamente (botón derecho sobre Productos -> Run On Server…). ¿Es correcto que un usuario ingrese a la aplicación desde cualquier componente, sin previa autenticación?. ¿Cómo haría para rechazarlo?.
+
+**No es correcto.**
+
+**Una posible solucion, es verificar si la peticion dispone de una sesion con "request.getSession(false)". En el caso de no tenerla, se redirigue al usuario a "login.html" para que se autentique y la obtenga para poder navegar por el sitio web.**
