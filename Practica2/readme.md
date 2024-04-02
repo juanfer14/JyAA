@@ -46,4 +46,6 @@ requerimiento al servlet **TerminarSesion**.
 
 2. Configure el navegador para que no acepte cookies. ¿La aplicación web **compras** sigue funcionando?. En caso de no funcionar correctamente, escriba una solución.
 
-3. Ejecute el servlet **Productos** directamente (botón derecho sobre Productos -> Run On Server…). ¿Es correcto que un usuario ingrese a la aplicación desde cualquier componente, sin previa autenticación?. ¿Cómo haría para rechazarlo?.
+_No funciona, ya que no se habilito el mecanismo de reescritura de URL para poder identificar la sesion del usuario._
+
+4. Ejecute el servlet **Productos** directamente (botón derecho sobre Productos -> Run On Server…). ¿Es correcto que un usuario ingrese a la aplicación desde cualquier componente, sin previa autenticación?. ¿Cómo haría para rechazarlo?.
