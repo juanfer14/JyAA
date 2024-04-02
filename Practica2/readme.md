@@ -46,8 +46,9 @@ requerimiento al servlet **TerminarSesion**.
 
 2. Configure el navegador para que no acepte cookies. ¿La aplicación web **compras** sigue funcionando?. En caso de no funcionar correctamente, escriba una solución.
 
-_No funciona, ya que no se habilito el mecanismo de reescritura de URL para poder identificar la sesion del usuario._<br>
-_Para solucionar este problema, hay que utilizar en cada url o redireccion los metodos response.encodeURL(PATH) y response.encodeRedirectURL(PATH) respectivamente__
+No funciona, ya que no se habilito el mecanismo de reescritura de URL para poder identificar la sesion del usuario.
+
+Para solucionar este problema, hay que utilizar en cada url o redireccion los metodos response.encodeURL(PATH) y response.encodeRedirectURL(PATH) respectivamente
 
 Ejemplo, si se tiene:
   * response.sendRedirect("/compras/Productos"); se utiliza
