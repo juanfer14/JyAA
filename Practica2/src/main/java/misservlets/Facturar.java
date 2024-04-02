@@ -52,9 +52,10 @@ public class Facturar extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		HttpSession session = request.getSession(true);
-		Usuario user = (Usuario) session.getAttribute("usuario");
-		if(user != null) {
+		HttpSession session = request.getSession(false);
+		
+		if(session != null) {
+			Usuario user = (Usuario) session.getAttribute("usuario");
 			golosinas = (Golosinas)session.getAttribute("precios");
 			user.resetGolosinas();
 			Enumeration<String> parameters = request.getParameterNames();
@@ -97,8 +98,8 @@ public class Facturar extends HttpServlet {
 					out.println("</table>");
 					
 				}
-				out.println("<a href=\"/compras/Productos\">Productos</a>");
-				out.println("<a href=\"/compras/TerminarSesion\">Salir</a>");
+				out.println("<a href=\"" + response.encodeURL("/compras/Productos") + "\" >Productos</a>");
+				out.println("<a href=\"" + response.encodeURL("/compras/TerminarSesion") + "\" >Salir</a>");
 			out.println("</body>");
 			out.println("</html>");
 			

@@ -30,7 +30,7 @@ public class TerminarSesion extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		HttpSession session = request.getSession(true);
+		HttpSession session = request.getSession(false);
 		if(session != null)
 			session.invalidate();
 		response.sendRedirect("/compras/login.html");

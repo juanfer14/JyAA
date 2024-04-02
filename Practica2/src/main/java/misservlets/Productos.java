@@ -49,11 +49,12 @@ public class Productos extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession(true);
-		Usuario user = (Usuario) session.getAttribute("usuario");
+		HttpSession session = request.getSession(false);
 		
-		if(user != null) {
-			session.setAttribute("precios", golosinas);
+		if(session != null) {
+			Usuario user = (Usuario) session.getAttribute("usuario");
+			if(session.getAttribute("precios") == null)
+				session.setAttribute("precios", golosinas);
 			
 			PrintWriter out = response.getWriter();
 			out.println("<html>");
@@ -62,7 +63,7 @@ public class Productos extends HttpServlet {
 			out.println("</head>");
 			out.println("<body>");
 				out.println("<h1>Seleccione los productos</h1>");
-				out.println("<form action=\"/compras/Facturar\" method=\"GET\" id=\"form1\">");
+				out.println("<form action=\"" + response.encodeURL("/compras/Facturar") + "\" method=\"GET\" id=\"form1\">");
 					out.println("<table>");
 						out.println("<tr>");
 							out.println("<th>Golosina</th>");
@@ -82,7 +83,7 @@ public class Productos extends HttpServlet {
 						}
 					out.println("</table>");
 					out.println("<button type=\"submit\">Facturar</button>");
-					out.println("<a href=\"/compras/TerminarSesion\">Salir</a>");
+					out.println("<a href=\"" + response.encodeURL("/compras/TerminarSesion") + "\">Salir</a>");
 				out.println("</form>");
 			
 			out.println("</body>");

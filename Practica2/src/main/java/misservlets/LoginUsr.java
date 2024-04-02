@@ -61,7 +61,8 @@ public class LoginUsr extends HttpServlet {
 				user.setZipcode(request.getParameter("codigo"));
 				session.setAttribute("usuario", user);
 			}
-			response.sendRedirect("/compras/Productos");
+			response.sendRedirect(response.encodeRedirectURL("/compras/Productos"));
+			
 		} else 
 			response.sendRedirect("/compras/login.html");
 	}
