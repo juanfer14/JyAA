@@ -33,4 +33,18 @@ Los datos de las golosinas, se cargan en memoria, cuando se inicializa el servle
 
 ![Datos de las golosinas](/Practica2/assets/figura2.png)
 
+La página HTML resultante de ejecutar el servlet **Productos**, mostrará actualizada la cantidad de golosinas que el usuario va a comprar. Esto significa que inicialmente dichas cantidades tienen el valor cero, y que cada vez que se ejecuta el servlet, estas cantidades se actualizarán
+de acuerdo a los datos ingresados por el usuario, guardados en la sesión del usuario. La página incluye un _link_ cuyo texto es “Salir” que envía un requerimiento al servlet **TerminarSesion**.
+
+![Ejemplo de tabla con productos, precios y cantidades](/Practica2/assets/figura3.png)
+
+- **Facturar**: es un servlet que arma dinámicamente una tabla HTML con tres columnas y tantas filas como golosinas compró el usuario. La primer columna contiene el nombre de la golosina, la segunda la cantidad comprada y la tercera el precio total. Todos son campos no
+editables. Al final de la tabla se muestra el **total general**.
+
+En la sesión, se guardan los datos de las golosinas compradas (nombre, cantidad y precio unitario) por lo que los datos a mostrar se recuperan de la sesión.
+Además, la página contiene dos _links_: uno con el texto “Seguir comprando” que al presionarlo ejecuta el servlet **Productos**, para que el usuario pueda seguir comprando (agregar otras golosinas, modificar la cantidad comprada, etc) y, otro con el texto “Salir” que envía un
+requerimiento al servlet **TerminarSesion**.
+
+- **TerminarSesion**: es un servlet que invalida la sesión del usuario, pues el usuario ya terminó de comprar y redirecciona el requerimiento a la página **login.html**. No tiene pantalla asociada.
+
 2. 
