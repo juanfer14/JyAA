@@ -57,4 +57,4 @@ requerimiento al servlet **TerminarSesion**.
 
 **No es correcto.**
 
-**Una posible solucion, es verificar si la peticion dispone de una sesion con "request.getSession(false)". En el caso de no tenerla, se redirigue al usuario a "login.html" para que se autentique y la obtenga para poder navegar por el sitio web.**
+**Una posible solucion, es verificar si la peticion recibida por el servlet, dispone de una sesion con el metodo "request.getSession(false)". En el caso de no tenerla, se redirigue al usuario a "login.html" para que se autentique y obtenga una sesion, para poder navegar por el sitio web.**
