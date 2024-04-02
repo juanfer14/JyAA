@@ -9,7 +9,9 @@ Cree un proyecto Web dinámico de nombre **Practica2**. Asigne como nombre de la
 
 1. La aplicación Web compras debe permitir elegir golosinas desde una lista y comprarlas. La aplicación requiere autenticación. El diagrama de navegación de la aplicación es el siguiente:
 
-![Flujo de los servlets](/Practica2/assets/figura1.png)
+<p align="center">
+  <img src="/Practica2/assets/figura1.png" alt="Flujo de los servlets" width="50%" height="50%">
+</p>
 
 Descripción de cada componente:
 ------------------------------
@@ -31,7 +33,9 @@ Finalmente, el botón _submit_ envía el requerimiento al servlet **Facturar**.
 
 Los datos de las golosinas, se cargan en memoria, cuando se inicializa el servlet (en el método **init()** del servlet) a partir de parámetros de inicialización que se leen del archivo **web.xml**. En el **web.xml**, en la declaración del servlet **Productos**, podría declarar por ejemplo los siguientes productos (nombre, valor):
 
-![Datos de las golosinas](/Practica2/assets/figura2.png)
+<p align="center">
+  <img src="/Practica2/assets/figura1.png" alt="Flujo de los servlets" width="50%" height="50%">
+</p>
 
 La página HTML resultante de ejecutar el servlet **Productos**, mostrará actualizada la cantidad de golosinas que el usuario va a comprar. Esto significa que inicialmente dichas cantidades tienen el valor cero, y que cada vez que se ejecuta el servlet, estas cantidades se actualizarán
 de acuerdo a los datos ingresados por el usuario, guardados en la sesión del usuario. La página incluye un _link_ cuyo texto es “Salir” que envía un requerimiento al servlet **TerminarSesion**.
