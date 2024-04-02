@@ -46,7 +46,7 @@ de acuerdo a los datos ingresados por el usuario, guardados en la sesión del us
 
 - **Facturar**: es un servlet que arma dinámicamente una tabla HTML con tres columnas y tantas filas como golosinas compró el usuario. La primer columna contiene el nombre de la golosina, la segunda la cantidad comprada y la tercera el precio total. Todos son campos no
 editables. Al final de la tabla se muestra el **total general**.
-En la sesión, se guardan los datos de las golosinas compradas (nombre, cantidad y precio unitario) por lo que los datos a mostrar se recuperan de la sesión.
+En la sesión, se guardan los datos de las golosinas compradas (nombre, cantidad y precio unitario) por lo que los datos a mostrar se recuperan de la sesión.<br>
 Además, la página contiene dos _links_: uno con el texto “Seguir comprando” que al presionarlo ejecuta el servlet **Productos**, para que el usuario pueda seguir comprando (agregar otras golosinas, modificar la cantidad comprada, etc) y, otro con el texto “Salir” que envía un
 requerimiento al servlet **TerminarSesion**.
 
