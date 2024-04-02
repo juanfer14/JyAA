@@ -49,4 +49,12 @@ requerimiento al servlet **TerminarSesion**.
 _No funciona, ya que no se habilito el mecanismo de reescritura de URL para poder identificar la sesion del usuario._<br>
 _Para solucionar este problema, hay que utilizar en cada url o redireccion los metodos response.encodeURL(PATH) y response.encodeRedirectURL(PATH) respectivamente__
 
+Ejemplo, si se tiene:
+  * response.sendRedirect("/compras/Productos"); se utiliza
+  * response.sendRedirect(response.encodeRedirectURL("/compras/Productos"));
+
+Otro ejemplo es:
+  * <a href=\"/compras/Productos\" >Productos</a>, se debe reemplazar por
+  * <a href=\"" + response.encodeURL("/compras/Productos") + "\" >Productos</a>
+
 4. Ejecute el servlet **Productos** directamente (botón derecho sobre Productos -> Run On Server…). ¿Es correcto que un usuario ingrese a la aplicación desde cualquier componente, sin previa autenticación?. ¿Cómo haría para rechazarlo?.
