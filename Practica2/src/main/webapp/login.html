@@ -7,15 +7,15 @@
 <body>
 	<form action="/compras/LoginUsr" method="POST">
 		<label for="usuario">Nombre de usuario:</label><br>
-		<input type="text" id="usuario" name="usuario"><br>
+		<input type="text" id="usuario" name="usuario" required><br>
 		<label for="pass">Contraseña:</label><br>
-		<input type="password" id="pass" name="pass"><br>
+		<input type="password" id="pass" name="pass" required><br>
 		<label for="nombre">Apellido y Nombre:</label><br>
-		<input type="text" id="nombre" name="nombre"><br>
+		<input type="text" id="nombre" name="nombre" required><br>
 		<label for="codigo">Codigo postal:</label><br>
-		<input type="text" id="codigo" name="codigo" pattern="[0-9]{4}"><br>
+		<input type="text" id="codigo" name="codigo" pattern="[0-9]{4}" required><br>
 		<br>
 		<input type="submit" value="Login">
 	</form>
 </body>
-</html>
+</html>	

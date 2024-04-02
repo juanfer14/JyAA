@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +22,7 @@ import java.util.Map;
  */
 public class Facturar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Map<String, Integer> golosinas;   
+	private Golosinas golosinas;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -34,16 +35,15 @@ public class Facturar extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 		super.init(config);
-		ServletContext contexto = getServletContext();
-		golosinas = new HashMap<String, Integer>();
-		int i = 1;
-		String nombre = (String) contexto.getAttribute("golo"+i);
-		while(nombre != null) {
-			Integer precio = (Integer)contexto.getAttribute("pu"+ i);
-			golosinas.put(nombre, precio);
-			nombre = (String) contexto.getAttribute("golo"+ ++i);
-		}
 	}
+    
+    private Integer getPrecioGolosina(Usuario user, String golosina) {
+    	return user.getCantidadGolosina(golosina) * golosinas.getPrecio(golosina);
+    }
+    
+    private Integer valorFinal(Usuario user) {
+    	return user.getGolosinas().stream().mapToInt(golosina -> this.getPrecioGolosina(user, golosina)).sum();
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -55,14 +55,16 @@ public class Facturar extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		Usuario user = (Usuario) session.getAttribute("usuario");
 		if(user != null) {
+			golosinas = (Golosinas)session.getAttribute("precios");
 			user.resetGolosinas();
-			for(String clave: golosinas.keySet()) {
-				Integer cantidad = Integer.parseInt(request.getParameter(clave));
-				if(cantidad != null && cantidad != 0) {
-					user.setPrecioGolosina(clave, golosinas.get(clave));
-					user.setCantidadGolosina(clave, cantidad);
-				}
+			Enumeration<String> parameters = request.getParameterNames();
+			while(parameters.hasMoreElements()) {
+				String golosina = parameters.nextElement();
+				Integer cantidad = Integer.parseInt(request.getParameter(golosina));
+				if(cantidad != null && cantidad != 0)
+					user.setCantidadGolosina(golosina, cantidad);
 			}
+	
 			
 			PrintWriter out = response.getWriter();
 			out.println("<html>");
@@ -70,28 +72,31 @@ public class Facturar extends HttpServlet {
 			out.println("<title>Facturar</title>");
 			out.println("</head>");
 			out.println("<body>");
-				out.println("<h1>Facturacion del cliente</h1>");
-				out.println("<table>");
-				out.println("<tr>");
-					out.println("<th>Nombre</th>");
-					out.println("<th>Cantidad</th>");
-					out.println("<th>Precio Total</th>");
-				out.println("</tr>");
-				for(String clave: user.getGolosinas()) {
-					System.out.println("CANTIDAD DE LA GOLOSINA " + clave + ": " + user.getCantidadGolosina(clave).toString());
-					System.out.println("TOTAL GOLOSINA: " + user.getPrecioCantidadGolosina(clave).toString());
+				if(user.getGolosinas().isEmpty()) {
+					out.println("<h1>No se selecciono ningun producto</h1>");
+				} else {
+					out.println("<h1>Facturacion del cliente</h1>");
+					out.println("<table>");
 					out.println("<tr>");
-						out.println("<td>" + clave + "</td>");
-						out.println("<td>" + user.getCantidadGolosina(clave).toString() + "</td>");
-						out.println("<td>" + user.getPrecioCantidadGolosina(clave).toString() + "</td>");
-					out.println("</tr>");	
+						out.println("<th>Nombre</th>");
+						out.println("<th>Cantidad</th>");
+						out.println("<th>Precio Total</th>");
+					out.println("</tr>");
+					for(String clave: user.getGolosinas()) {
+						out.println("<tr>");
+							out.println("<td>" + clave + "</td>");
+							out.println("<td>" + user.getCantidadGolosina(clave).toString() + "</td>");
+							out.println("<td>" + this.getPrecioGolosina(user, clave).toString() + "</td>");
+						out.println("</tr>");	
+					}
+					out.println("<tr>");
+						out.println("<td></td>");
+						out.println("<td>PRECIO FINAL</td>");
+						out.println("<td>" + this.valorFinal(user).toString() + "</td>");
+					out.println("</tr>");
+					out.println("</table>");
+					
 				}
-				out.println("<tr>");
-					out.println("<td></td>");
-					out.println("<td>PRECIO FINAL</td>");
-					out.println("<td>" + user.getPrecioTotal().toString() + "</td>");
-				out.println("</tr>");
-				out.println("</table>");
 				out.println("<a href=\"/compras/Productos\">Productos</a>");
 				out.println("<a href=\"/compras/TerminarSesion\">Salir</a>");
 			out.println("</body>");

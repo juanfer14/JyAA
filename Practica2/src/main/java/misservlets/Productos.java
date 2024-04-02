@@ -20,7 +20,7 @@ import java.util.Map;
  */
 public class Productos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private Map<String, Integer> golosinas;
+	private Golosinas golosinas;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,15 +33,13 @@ public class Productos extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 		super.init(config);
-		ServletContext contexto = getServletContext();
-		golosinas = new HashMap<>();
+		golosinas = Golosinas.getInstance();
+		
 		int i = 1;
 		String nombre = this.getInitParameter("golo"+i);
 		while(nombre != null) {
 			Integer precio = Integer.parseInt(this.getInitParameter("pu"+ i));
-			contexto.setAttribute("golo"+i, nombre);
-			contexto.setAttribute("pu"+i, precio);
-			golosinas.put(nombre, precio);
+			golosinas.setGolosina(nombre, precio);
 			nombre = this.getInitParameter("golo"+ ++i);
 		}
 	}
@@ -55,6 +53,7 @@ public class Productos extends HttpServlet {
 		Usuario user = (Usuario) session.getAttribute("usuario");
 		
 		if(user != null) {
+			session.setAttribute("precios", golosinas);
 			
 			PrintWriter out = response.getWriter();
 			out.println("<html>");
@@ -70,10 +69,10 @@ public class Productos extends HttpServlet {
 							out.println("<th>Precio unitario</th>");
 							out.println("<th>Cantidad</th>");
 						out.println("</tr>");
-						for(String clave: golosinas.keySet()) {
+						for(String clave: golosinas.getGolosinas()) {
 							out.println("<tr>");
 								out.println("<td>"+ clave + "</td>");
-								out.println("<td>"+ golosinas.get(clave) + "</td>");
+								out.println("<td>"+ golosinas.getPrecio(clave) + "</td>");
 								Integer cantActual = user.getCantidadGolosina(clave);
 								if(cantActual == null) {
 									cantActual = 0;
@@ -85,7 +84,7 @@ public class Productos extends HttpServlet {
 					out.println("<button type=\"submit\">Facturar</button>");
 					out.println("<a href=\"/compras/TerminarSesion\">Salir</a>");
 				out.println("</form>");
-				
+			
 			out.println("</body>");
 			out.println("</html>");
 			out.close();
