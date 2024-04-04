@@ -46,4 +46,8 @@ Si el radio seleccionado es “**Google**”: se debe redireccionar al sitio de 
 
 Si el dato ingresado no es ninguno de los de arriba, se invoca nuevamente a **inicio.html**.
 
+### Ejercicio 2)
 
+Realice modificaciones al ejercicio de la práctica 2 de manera de cargar los datos de las golosinas desde un archivo de texto. Para ello realice lo siguiente:
+
+  a. Cree un archivo de texto llamado stock.txt en la carpeta WEB-INF. Inicialícelo de la siguiente manera: en cada línea escriba el nombre de una golosina y su precio unitario separado por una coma (“,”). Cargue por lo menos 10 productos.
