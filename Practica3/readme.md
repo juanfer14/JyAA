@@ -15,7 +15,7 @@ Escriba un servlet llamado **controla** en el paquete **misservlets**. La funcio
 En este ejercicio, debe escribir una página HTML llamada **inicio.html**, que contenga, un formulario con **3 radio_buttons** (Servlet Hola, Productos, Google), **un campo de texto** con la etiqueta **Ingrese su nombre** y un **botón** de tipo _submit_ para enviar los datos ingresados. Los datos del formulario se envían al servlet **controla** para su procesamiento.
 
 <p align="center">
-  <img src="/Practica3/assets/figura1.png" alt="Form de ejemplo" width="50%" height="50%">
+  <img src="/Practica3/assets/figura1.png" alt="Form de ejemplo" width="60%" height="60%">
 </p>
 
 El servlet **controla** redirecciona el requerimiento de acuerdo a la selección del usuario:
@@ -38,10 +38,12 @@ Si el radio seleccionado es “**Productos**”: se debe redireccionar al Servle
 
 * **CrossContext es el acceso desde el contexto de una aplicacion web, hacia otro, para poder obtener un determinado recurso.**
 
-Si el radio seleccionado es “**Google**”: se debe redireccionar al sitio de Google (http://www.google.com.ar). Este sitio está en otro Servidor. ¿Qué mecanismo utilizó? ¿Existe alguna otra manera de hacerlo? 
+Si el radio seleccionado es “**Google**”: se debe redireccionar al sitio de Google (<http://www.google.com.ar>). Este sitio está en otro Servidor. ¿Qué mecanismo utilizó? ¿Existe alguna otra manera de hacerlo? 
 
 * **El de redireccion, a traves de "sendRedirect()"**
 
 * **No, ya que se le debe indicar al navegador que rediriga la pagina hacia "Google"**
 
 Si el dato ingresado no es ninguno de los de arriba, se invoca nuevamente a **inicio.html**.
+
+
