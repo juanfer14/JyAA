@@ -63,7 +63,7 @@ public class Productos extends HttpServlet {
 			out.println("</head>");
 			out.println("<body>");
 				out.println("<h1>Seleccione los productos</h1>");
-				out.println("<form action=\"" + response.encodeURL("/compras/Facturar") + "\" method=\"GET\" id=\"form1\">");
+				out.println("<form action=\"" + response.encodeURL("/compras/Facturar") + "\" method=\"POST\" id=\"form1\">");
 					out.println("<table>");
 						out.println("<tr>");
 							out.println("<th>Golosina</th>");
