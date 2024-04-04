@@ -50,4 +50,11 @@ Si el dato ingresado no es ninguno de los de arriba, se invoca nuevamente a **in
 
 Realice modificaciones al ejercicio de la práctica 2 de manera de cargar los datos de las golosinas desde un archivo de texto. Para ello realice lo siguiente:
 
-  a. Cree un archivo de texto llamado stock.txt en la carpeta WEB-INF. Inicialícelo de la siguiente manera: en cada línea escriba el nombre de una golosina y su precio unitario separado por una coma (“,”). Cargue por lo menos 10 productos.
+- a) Cree un archivo de texto llamado stock.txt en la carpeta WEB-INF. Inicialícelo de la siguiente manera: en cada línea escriba el nombre de una golosina y su precio unitario separado por una coma (“,”). Cargue por lo menos 10 productos.<br>
+##### Ejemplo
+
+<p align="center">
+  <img src="/Practica3/assets/figura3.png" alt="Archivo stock.txt con el nombre y precio de las golosinas" width="60%" height="60%">
+</p>
+
+- b)
