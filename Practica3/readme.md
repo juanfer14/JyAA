@@ -23,3 +23,25 @@ El servlet **controla** redirecciona el requerimiento de acuerdo a la selección
 <p align="center">
   <img src="/Practica3/assets/figura2.png" alt="Form de ejemplo" width="50%" height="50%">
 </p>
+
+Si el radio seleccionado es “**Servlet Hola**”: se redirecciona a **holaservlet** (un servlet que se está ejecutando en el mismo contexto que el servlet **controla**). El servlet **/holaservlet** simplemente debe devolver una página HTML con el mensaje “Bienvenida”+nombre (tomado del parámetro del requerimiento). ¿Qué mecanismo utilizó? ¿Existe alguna otra manera de hacerlo?
+
+**El forward, a traves de un dispatcher.**
+
+**No, ya que es necesario que reciba los mismos parametros que recibio el servlet "controla"**
+
+Si el radio seleccionado es “**Productos**”: se debe redireccionar al Servlet **/productos**, que está en el mismo servidor que el servlet **controla** pero en el contexto **compras** (proyecto **Practica2** creado en la práctica anterior). ¿Qué mecanismo utilizó? ¿Existe alguna otra manera de hacerlo? ¿Qué es el acceso CrossContext?
+
+**El forward, a traves de un dispatcher.**
+
+**Si, a traves de una redireccion con "sendRedirect()"**
+
+**CrossContext es el acceso desde el contexto de una aplicacion web, hacia otro, para poder obtener un determinado recurso.**
+
+Si el radio seleccionado es “**Google**”: se debe redireccionar al sitio de Google (http://www.google.com.ar). Este sitio está en otro Servidor. ¿Qué mecanismo utilizó? ¿Existe alguna otra manera de hacerlo? 
+
+**El de redireccion, a traves de "sendRedirect()"**
+
+**No, ya que se le debe indicar al navegador que rediriga la pagina hacia "Google"**
+
+Si el dato ingresado no es ninguno de los de arriba, se invoca nuevamente a **inicio.html**.
