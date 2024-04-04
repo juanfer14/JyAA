@@ -57,7 +57,7 @@ Realice modificaciones al ejercicio de la práctica 2 de manera de cargar los da
   <img src="/Practica3/assets/figura3.png" alt="Archivo stock.txt con el nombre y precio de las golosinas" width="40%" height="40%">
 </p>
 
-- b) Agregue al archivo web.xml el siguiente parámetros de inicialización de la aplicación web (antes del primer tag <code><servlet></code>.. <code></servlet></code>:
+- b) Agregue al archivo web.xml el siguiente parámetros de inicialización de la aplicación web (antes del primer tag <servlet>.. </servlet>:
 ```xml
 <context-param>
 <param-name>stock</param-name>
