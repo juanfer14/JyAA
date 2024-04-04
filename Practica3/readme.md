@@ -8,7 +8,7 @@ Temas
 
 Cree un proyecto nuevo llamado **Practica3** y asígnele como nombre del contexto (root/context path): **pruebas**.
 
-##### Ejercicio 1)
+#### Ejercicio 1)
 
 Escriba un servlet llamado **controla** en el paquete **misservlets**. La funcionalidad de este servlet es leer parámetros del requerimiento http y usarlos para determinar que recurso invocar.
 
