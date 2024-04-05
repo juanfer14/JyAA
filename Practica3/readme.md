@@ -74,6 +74,6 @@ Observe el archivo **_web.xml_**, ¿qué modificación o nuevo tag encuentra, lu
 
 
 - d) Modifique el servlet **Productos**, eliminando el código del método init() y modificando el método doGet()/doPost() de manera de obtener la información para armar la página usando los objetos del contexto de la aplicación creados en el servlet listener.<br>
-**Nota**: recuerde que el método **_getAttribute(clave)_** le permite recuperar del ServletContext el objeto ligado previamente con la **__clave_** pasada como parámetro. El objeto obtenido debe castearlo al tipo que corresponda.
+**Nota**: recuerde que el método **_getAttribute(clave)_** le permite recuperar del ServletContext el objeto ligado previamente con la **_clave_** pasada como parámetro. El objeto obtenido debe castearlo al tipo que corresponda.
 
 - e) Modifique servlet **Facturar** para obtener los precios de las golosinas que el usuario compró, del objeto del contexto aplicación creado en el servlet listener.
