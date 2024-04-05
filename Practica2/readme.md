@@ -44,17 +44,12 @@ requerimiento al servlet **TerminarSesion**.
 
 - **TerminarSesion**: es un servlet que invalida la sesión del usuario, pues el usuario ya terminó de comprar y redirecciona el requerimiento a la página **login.html**. No tiene pantalla asociada.
 
-2. Configure el navegador para que no acepte cookies. ¿La aplicación web **compras** sigue funcionando?. En caso de no funcionar correctamente, escriba una solución.
-
-**No funciona, ya que no se habilito el mecanismo de reescritura de URL para poder identificar la sesion del usuario.**
-
-**Para solucionar este problema, hay que reemplazar cada PATH hacia un servlet por uno de los siguientes metodos: response.encodeURL(PATH) o response.encodeRedirectURL(PATH)**
-
-**response.encodeURL(PATH) se utiliza cuando el PATH hacia el servlet esta en un elemento html; response.encodeRedirectURL(PATH) es utilizado cuando el servlet realiza una redireccion con el metodo response.sendRedirect(PATH).**
+2. Configure el navegador para que no acepte cookies. ¿La aplicación web **compras** sigue funcionando?. En caso de no funcionar correctamente, escriba una solución.<br>
+  * **No funciona, ya que no se habilito el mecanismo de reescritura de URL para poder identificar la sesion del usuario.**
+  * **Para solucionar este problema, hay que reemplazar cada PATH hacia un servlet por uno de los siguientes metodos: response.encodeURL(PATH) o response.encodeRedirectURL(PATH)**
+  * **response.encodeURL(PATH) se utiliza cuando el PATH hacia el servlet esta en un elemento html; response.encodeRedirectURL(PATH) es utilizado cuando el servlet realiza una redireccion con el metodo response.sendRedirect(PATH).**
 
 
 4. Ejecute el servlet **Productos** directamente (botón derecho sobre Productos -> Run On Server…). ¿Es correcto que un usuario ingrese a la aplicación desde cualquier componente, sin previa autenticación?. ¿Cómo haría para rechazarlo?.
-
-**No es correcto.**
-
-**Una posible solucion, es verificar si la peticion recibida por el servlet, dispone de una sesion con el metodo "request.getSession(false)". En el caso de no tenerla, se redirigue al usuario a "login.html" para que se autentique y obtenga una sesion, para poder navegar por el sitio web.**
+  * **No es correcto.**
+  * **Una posible solucion, es verificar si la peticion recibida por el servlet, dispone de una sesion con el metodo "request.getSession(false)". En el caso de no tenerla, se redirigue al usuario a "login.html" para que se autentique y obtenga una sesion, para poder navegar por el sitio web.**
