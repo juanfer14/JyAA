@@ -69,7 +69,9 @@ Realice modificaciones al ejercicio de la práctica 2 de manera de cargar los da
 En el método **contextInitialized(ServletContextEvent event)** se deben crear los objetos necesarios a partir de los datos leídos del archivo de texto **stock.txt**, cuya ubicación debe obtenerse del parámetro de contexto “stock” declarado en el archivo **web.xml**.<br>
 Los objetos creados se deben ligar al contexto de la aplicación, invocando al método **_setAttribute(clave,Objeto)_** del objeto ServletContext. De esta forma, cada vez que desde un servlet de su aplicación, necesite usar el stock de golosinas, deberá invocar al método **_getAttribute()_** del ServletContext para obtener dicho objeto.<br><br>
 **Ayuda**: Para leer del archivo de texto use el método **getResourseAsStream()** de ServletContext que devuelve un objeto InputStream. Luego cree un objeto BufferedReader a partir del objeto InputStream obtenido y así podrá leer de a líneas el archivo de texto.<br><br>
-Observe el archivo **_web.xml_**, ¿qué modificación o nuevo tag encuentra, luego de haber agregado el servlet listener?
+Observe el archivo **_web.xml_**, ¿qué modificación o nuevo tag encuentra, luego de haber agregado el servlet listener?<br><br>
+**Se agrego el tag \<listener\> que contiene el tag \<listener-class\> indicando donde se encuentra ubicada la clase del listener.**
+
 
 - d) Modifique el servlet **Productos**, eliminando el código del método init() y modificando el método doGet()/doPost() de manera de obtener la información para armar la página usando los objetos del contexto de la aplicación creados en el servlet listener.<br>
 **Nota**: recuerde que el método **_getAttribute(clave)_** le permite recuperar del ServletContext el objeto ligado previamente con la **__clave_** pasada como parámetro. El objeto obtenido debe castearlo al tipo que corresponda.
