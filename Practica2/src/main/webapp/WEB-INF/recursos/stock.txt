@@ -1,0 +1,10 @@
+Chocolatines, 1.25
+Chupetines, 0.90
+Caramelos, 0.05
+Pastillas, 1
+Chicles, 1.10
+Gomitas, 2.0
+Alfajores, 2.5
+Turrones, 0.8
+Paletas, 0.95
+Chocolates, 4.0

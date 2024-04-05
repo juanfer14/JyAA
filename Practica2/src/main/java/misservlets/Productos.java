@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 /**
@@ -20,7 +21,7 @@ import java.util.Map;
  */
 public class Productos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Golosinas golosinas;
+	private Hashtable<String, Double> golosinas;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,15 +34,6 @@ public class Productos extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 		super.init(config);
-		golosinas = Golosinas.getInstance();
-		
-		int i = 1;
-		String nombre = this.getInitParameter("golo"+i);
-		while(nombre != null) {
-			Integer precio = Integer.parseInt(this.getInitParameter("pu"+ i));
-			golosinas.setGolosina(nombre, precio);
-			nombre = this.getInitParameter("golo"+ ++i);
-		}
 	}
 
 	/**
@@ -52,6 +44,7 @@ public class Productos extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		
 		if(session != null) {
+			golosinas = (Hashtable<String, Double>) this.getServletContext().getAttribute("golosinas");
 			Usuario user = (Usuario) session.getAttribute("usuario");
 			if(session.getAttribute("precios") == null)
 				session.setAttribute("precios", golosinas);
@@ -70,10 +63,10 @@ public class Productos extends HttpServlet {
 							out.println("<th>Precio unitario</th>");
 							out.println("<th>Cantidad</th>");
 						out.println("</tr>");
-						for(String clave: golosinas.getGolosinas()) {
+						for(String clave: golosinas.keySet()) {
 							out.println("<tr>");
 								out.println("<td>"+ clave + "</td>");
-								out.println("<td>"+ golosinas.getPrecio(clave) + "</td>");
+								out.println("<td>"+ golosinas.get(clave) + "</td>");
 								Integer cantActual = user.getCantidadGolosina(clave);
 								if(cantActual == null) {
 									cantActual = 0;

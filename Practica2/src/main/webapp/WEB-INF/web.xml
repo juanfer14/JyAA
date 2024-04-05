@@ -12,6 +12,10 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <context-param>
+    <param-name>stock</param-name>
+    <param-value>/WEB-INF/recursos/stock.txt</param-value>
+  </context-param>
   <servlet>
     <description>Login de usuario</description>
     <display-name>LoginUsr</display-name>
@@ -94,4 +98,7 @@
     <servlet-name>Facturar</servlet-name>
     <url-pattern>/Facturar</url-pattern>
   </servlet-mapping>
+  <listener>
+    <listener-class>misservlets.InicializaStock</listener-class>
+  </listener>
 </web-app>

@@ -13,16 +13,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Hashtable;
 
 /**
  * Servlet implementation class Facturar
  */
 public class Facturar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Golosinas golosinas;
+	private Hashtable<String, Double> golosinas;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -37,12 +37,12 @@ public class Facturar extends HttpServlet {
 		super.init(config);
 	}
     
-    private Integer getPrecioGolosina(Usuario user, String golosina) {
-    	return user.getCantidadGolosina(golosina) * golosinas.getPrecio(golosina);
+    private Double getPrecioGolosina(Usuario user, String golosina) {
+    	return user.getCantidadGolosina(golosina) * golosinas.get(golosina);
     }
     
-    private Integer valorFinal(Usuario user) {
-    	return user.getGolosinas().stream().mapToInt(golosina -> this.getPrecioGolosina(user, golosina)).sum();
+    private Double valorFinal(Usuario user) {
+    	return user.getGolosinas().stream().mapToDouble(golosina -> this.getPrecioGolosina(user, golosina)).sum();
     }
 
 	/**
@@ -56,7 +56,7 @@ public class Facturar extends HttpServlet {
 		
 		if(session != null) {
 			Usuario user = (Usuario) session.getAttribute("usuario");
-			golosinas = (Golosinas)session.getAttribute("precios");
+			golosinas = (Hashtable<String, Double>) this.getServletContext().getAttribute("golosinas");
 			user.resetGolosinas();
 			Enumeration<String> parameters = request.getParameterNames();
 			while(parameters.hasMoreElements()) {
@@ -87,13 +87,13 @@ public class Facturar extends HttpServlet {
 						out.println("<tr>");
 							out.println("<td>" + clave + "</td>");
 							out.println("<td>" + user.getCantidadGolosina(clave).toString() + "</td>");
-							out.println("<td>" + this.getPrecioGolosina(user, clave).toString() + "</td>");
+							out.println("<td>" + String.format("%.2f", this.getPrecioGolosina(user, clave)) + "</td>");
 						out.println("</tr>");	
 					}
 					out.println("<tr>");
 						out.println("<td></td>");
 						out.println("<td>PRECIO FINAL</td>");
-						out.println("<td>" + this.valorFinal(user).toString() + "</td>");
+						out.println("<td>" + String.format("%.2f", this.valorFinal(user)) + "</td>");
 					out.println("</tr>");
 					out.println("</table>");
 					

@@ -35,19 +35,24 @@ public class Controla extends HttpServlet {
 		RequestDispatcher dispatcher;
 		
 		String opcion = request.getParameter("opcion");
-		switch(opcion) {
-			case "hola":
-				dispatcher = ctx.getNamedDispatcher("HolaServlet");
-				if(dispatcher != null) dispatcher.forward(request, response);
-				break;
-			case "productos":
-				dispatcher = ctx.getContext("/compras").getRequestDispatcher("/Productos");
-				if(dispatcher != null) dispatcher.forward(request, response);
-				break;
-			case "google":
-				response.sendRedirect("http://www.google.com.ar");
-				break;
-		}
+		if(opcion != null) {
+			switch(opcion) {
+				case "hola":
+					dispatcher = ctx.getNamedDispatcher("HolaServlet");
+					if(dispatcher != null) dispatcher.forward(request, response);
+					break;
+				case "productos":
+					dispatcher = ctx.getContext("/compras").getRequestDispatcher("/Productos");
+					if(dispatcher != null) dispatcher.forward(request, response);
+					break;
+				case "google":
+					response.sendRedirect("http://www.google.com.ar");
+					break;
+				case "default":
+					response.sendRedirect("/pruebas/inicio.html");
+			}
+		} else response.sendRedirect("/pruebas/inicio.html");
 	}
+		
 
 }
