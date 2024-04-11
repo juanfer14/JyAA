@@ -1,4 +1,4 @@
-# PRÁCTICA No 4
+# PRÁCTICA Nº 4
 
 #### Temas:
 - Patrón DAO. JPA. Hibernate.
