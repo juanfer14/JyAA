@@ -3,7 +3,7 @@
 #### Temas:
 - Patrón DAO. JPA. Hibernate.
 
-Cree un proyecto nuevo llamado Practica4. 
+Cree un proyecto nuevo llamado **Practica4**. 
 
 ## Presupuestos online de fiestas de casamiento
 
