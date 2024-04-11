@@ -9,7 +9,7 @@ Cree un proyecto nuevo llamado Practica4.
 
 1.- Realice un sitio que permita obtener presupuestos estimativos de fiestas de casamiento, completando un formulario de ítems a tener en cuenta. La información a manejar es la siguiente:
 
-Cantidad de asistentes
+- Cantidad de asistentes
 - Salón
 - Catering
 - Barra libre
