@@ -23,10 +23,8 @@ Cantidad de asistentes
 - Alianzas
 - Servicio de Video y Fotografía
 
-Donde cada ítem tiene un precio asociado.
-
-El sitio debe recuperar la información desde una BD utilizando el patrón DAO y JPA. 
-
+Donde cada ítem tiene un precio asociado. <br>
+El sitio debe recuperar la información desde una BD utilizando el patrón DAO y JPA. <br>
 El esquema del sitio es el siguiente:
 
 <p align="center">
