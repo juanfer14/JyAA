@@ -28,7 +28,7 @@ El sitio debe recuperar la información desde una BD utilizando el patrón DAO y
 El esquema del sitio es el siguiente:
 
 <p align="center">
-  <img src="/Practica4/assets/figura1.png" alt="Form de ejemplo" width="60%" height="60%">
+  <img src="/Practica4/assets/figura1.png" alt="Form de ejemplo" width="70%" height="70%">
 </p>
 
 El formulario debe mostrar los ítems a tener en cuenta para calcular el presupuesto y 2 campos más donde el _visitante_ ingresa su nombre y su email, los cuales deben ser registrados en la BD.
