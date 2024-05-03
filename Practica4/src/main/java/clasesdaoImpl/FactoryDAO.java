@@ -1,5 +1,6 @@
 package clasesdaoImpl;
 
+import interfacesdao.IItemsDAO;
 import interfacesdao.IPersonaDAO;
 
 public class FactoryDAO {
@@ -10,6 +11,10 @@ public class FactoryDAO {
 	
 	public static IPersonaDAO getPersonaDAO() {
 		return new PersonaDAO();
+	}
+	
+	public static IItemsDAO getItemsDAO() {
+		return new ItemsDAO();
 	}
 
 }
