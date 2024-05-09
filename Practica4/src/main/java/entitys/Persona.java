@@ -9,10 +9,11 @@ public class Persona implements java.io.Serializable {
 	@Id
 	private long id;
 	private String nombre;
-	private String apellido;
+	private String email;
 
-	public Persona() {
-		// TODO Auto-generated constructor stub
+	public Persona(String nombre, String email) {
+		this.nombre = nombre;
+		this.email = email;
 	}
 
 	public long getId() {
@@ -31,12 +32,12 @@ public class Persona implements java.io.Serializable {
 		this.nombre = nombre;
 	}
 
-	public String getApellido() {
-		return apellido;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setApellido(String email) {
+		this.email = email;
 	}
 
 }

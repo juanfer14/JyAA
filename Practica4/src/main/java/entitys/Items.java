@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name="Items.find", query="SELECT * FROM items")
+	@NamedQuery(name="Items.find", query="SELECT i FROM Items i")
 })
 @Table(name="items")
 public class Items implements java.io.Serializable {

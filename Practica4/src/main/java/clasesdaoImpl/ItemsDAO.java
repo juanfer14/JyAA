@@ -1,7 +1,7 @@
 package clasesdaoImpl;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import entitys.Items;
 import interfacesdao.IItemsDAO;
