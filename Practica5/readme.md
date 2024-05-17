@@ -10,7 +10,7 @@
 
 ## Presupuestos online de fiestas de casamiento
 
-Implemente un servlet Filtro, llamado **FiltroControlaSesion**, el cual debe verificar si el requerimiento HTTP pertenece a una sesión. Si el requerimiento no pertenece a una sesión, debe redireccionar a la página **login.html**, en caso contrario se pasa el control al recurso destino de dicho requerimiento HTTP.
+Implemente un servlet Filtro, llamado **FiltroControlaSesion**, el cual debe verificar si el requerimiento HTTP pertenece a una sesión. Si el requerimiento no pertenece a una sesión, debe redireccionar a la página **login.html**, en caso contrario se pasa el control al recurso destino de dicho requerimiento HTTP.<br>
 Pruebe el filtro implementado, configurando para que el mismo intercepte los requerimientos HTTP para todos los recursos de la aplicación **compras** de la práctica 2, excepto para el servlet
 **LoginUsr**.
 
