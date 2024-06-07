@@ -23,13 +23,13 @@ Para ello:
 * c. ¿Cómo es la petición HTTP para crear un nuevo **Usuario**? Defina el método HTTP, URI, cabecera y cuerpo de la petición.<br>
 
 **La peticion para crear un nuevo usuario es POST**
-> POST /Practica6/usuarios/ HTTP/1.1
-> Content-type: application/json
-> {
->   "nombre": "juan"
->   "apellido": "campodonico"
->   "email": "juan@gmail.com"
-> }
+> POST /Practica6/usuarios/ HTTP/1.1<br>
+> Content-type: application/json<br>
+> {<br>
+>   "nombre": "juan"<br>
+>   "apellido": "campodonico"<br>
+>   "email": "juan@gmail.com"<br>
+> }<br>
 
 * d. ¿Qué debería responder el servicio luego de crear el **Usuario**? ¿Para qué se utiliza _Location_ en la cabecera de la respuesta?<br>
 
