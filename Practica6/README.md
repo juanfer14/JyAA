@@ -89,8 +89,8 @@ Para ello:
 
 >HTTP/1.1 204 No Content
 
->HTTP/1.1 200 OK
->Content-Type: application/json
+>HTTP/1.1 200 OK<br>
+>Content-Type: application/json<br>
 >
 > {<br>
 >   "id": "1"<br>
@@ -108,8 +108,8 @@ Para ello:
 
 **La respuesta a esta operacion, puede ser un 204 o un 200, para indicar que se encontro al usuario.**
 
-> HTTP/1.1 200 OK
-> Content-Type: application/json
+> HTTP/1.1 200 OK<br>
+> Content-Type: application/json<br>
 >
 > {<br>
 >   "id": "1"<br>
@@ -127,8 +127,8 @@ Para ello:
 
 **La respuesta a esta operacion es un 200, indicando que se encontraron todos los usuarios o 204 si no hay ninguno.**
 
-> HTTP/1.1 200 OK
-> Content-Type: application/json
+> HTTP/1.1 200 OK<br>
+> Content-Type: application/json<br>
 >
 > [<br>
 >   {<br>
