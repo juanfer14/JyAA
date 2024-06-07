@@ -26,6 +26,11 @@ Para ello:
 > GET /Practica6/usuarios/<id> HTTP/1.1
 
 * d. ¿Qué debería responder el servicio luego de crear el **Usuario**? ¿Para qué se utiliza _Location_ en la cabecera de la respuesta?<br>
+
+**Deberia responder con el codigo de respuesta HTTP 201, indicando la creacion de un recurso.**
+
+**_Location_ se utiliza para poder referenciar a la URI del recurso creado.**
+
 * e. Repita los incisos c y d para las siguientes operaciones: Baja de un **Usuario**, Modificación de un **Usuario**, Consulta de un **Usuario** por id, y Listado de todos los **Usuarios**.<br>
 
 2. Desarrolle los servicios REST de las operaciones descriptas en el punto anterior usando alguna de las implementaciones de JAX-RS.
