@@ -106,7 +106,7 @@ Para ello:
 
 > GET /Practica6/usuarios/1 HTTP/1.1
 
-**La respuesta a esta operacion, puede ser un 204 o un 200, para indicar que se encontro al usuario.
+**La respuesta a esta operacion, puede ser un 204 o un 200, para indicar que se encontro al usuario.**
 
 > HTTP/1.1 200 OK
 > Content-Type: application/json
