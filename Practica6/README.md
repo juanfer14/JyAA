@@ -65,7 +65,7 @@ Para ello:
 >
 > {<br>
 >   "id": "1"<br>
->   "url": "http://localhost/Practica6/usuarios/1"
+>   "url": "http://localhost/Practica6/usuarios/1"<br>
 >   "nombre": "juan"<br>
 >   "apellido": "campodonico"<br>
 >   "email": "juan@gmail.com"<br>
@@ -79,7 +79,7 @@ Para ello:
 >
 > {<br>
 >   "id": "1"<br>
->   "url": "http://localhost/Practica6/usuarios/1"
+>   "url": "http://localhost/Practica6/usuarios/1"<br>
 >   "nombre": "tom"<br>
 >   "apellido": "campodonico"<br>
 >   "email": "tom@gmail.com"<br>
@@ -94,7 +94,7 @@ Para ello:
 >
 > {<br>
 >   "id": "1"<br>
->   "url": "http://localhost/Practica6/usuarios/1"
+>   "url": "http://localhost/Practica6/usuarios/1"<br>
 >   "nombre": "tom"<br>
 >   "apellido": "campodonico"<br>
 >   "email": "tom@gmail.com"<br>
