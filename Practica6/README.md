@@ -24,7 +24,7 @@ Para ello:
 
 **La peticion para crear un nuevo usuario es GET**
 
-PETICION:
+> REQUEST:
 
 > GET /Practica6/usuarios/<id> HTTP/1.1
 
