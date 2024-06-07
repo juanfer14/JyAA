@@ -56,9 +56,49 @@ Para ello:
 **La operacion para dar de baja un usuario es DELETE**
 > DELETE /Practica6/usuarios/1 HTTP/1.1<br>
 
-**Luego de la operacion, deberia responder con el codigo de respuesta 204, si no encontro el usuario o 200, para indicar que se borro el usuario.
+**Luego de la operacion, deberia responder con el codigo de respuesta 204, si no encontro el usuario o 200, para indicar que se borro el usuario.**
+
+> HTTP/1.1 204 No Content
+
+> HTTP/1.1 200 OK<br>
+> Content-Type: application/json<br>
+>
+> {<br>
+>   "id": "1"<br>
+>   "url": "http://localhost/Practica6/usuarios/1"
+>   "nombre": "juan"<br>
+>   "apellido": "campodonico"<br>
+>   "email": "juan@gmail.com"<br>
+> }
 
 <ins>Modificacion de un usuario</ins>
+
+**La operacion para modificar un usuario es PUT**
+> PUT /Practica6/usuarios/1 HTTP/1.1<br>
+> Content-Type: application/json<br>
+>
+> {<br>
+>   "id": "1"<br>
+>   "url": "http://localhost/Practica6/usuarios/1"
+>   "nombre": "tom"<br>
+>   "apellido": "campodonico"<br>
+>   "email": "tom@gmail.com"<br>
+> }
+
+**Luego de la operacion, la respuesta debe ser un 204 o un 200**
+
+>HTTP/1.1 204 No Content
+
+>HTTP/1.1 200 OK
+>Content-Type: application/json
+>
+> {<br>
+>   "id": "1"<br>
+>   "url": "http://localhost/Practica6/usuarios/1"
+>   "nombre": "tom"<br>
+>   "apellido": "campodonico"<br>
+>   "email": "tom@gmail.com"<br>
+> }
 
 <ins>Consulta de un usuario</ins>
 
