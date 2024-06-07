@@ -9,6 +9,10 @@
 Para ello:
 
 * a. Defina la URIs para identificar *un usuario particular*.<br>
+
+1. **localhost/Practica6/usuarios**: para retornar todos los usuarios**
+2. **localhost/Practica6/<id>**: para CRUD de un usuario en particular**
+
 * b. ¿Para qué operaciones sobre Usuarios utilizaría cada uno de los siguientes métodos HTTP: _GET, POST, PUT y DELETE_?<br>
 * c. ¿Cómo es la petición HTTP para crear un nuevo **Usuario**? Defina el método HTTP, URI, cabecera y cuerpo de la petición.<br>
 * d. ¿Qué debería responder el servicio luego de crear el **Usuario**? ¿Para qué se utiliza _Location_ en la cabecera de la respuesta?<br>
