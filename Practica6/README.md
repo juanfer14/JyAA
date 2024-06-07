@@ -85,7 +85,7 @@ Para ello:
 >   "email": "tom@gmail.com"<br>
 > }
 
-**Luego de la operacion, la respuesta debe ser un 204 o un 200**
+**Luego de la operacion, la respuesta debe ser un 204 o un 200, para indicar que se modifico el usuario.**
 
 >HTTP/1.1 204 No Content
 
@@ -101,6 +101,23 @@ Para ello:
 > }
 
 <ins>Consulta de un usuario</ins>
+
+**La operacion para consultar un usuario particular es GET**
+
+> GET /Practica6/usuarios/1 HTTP/1.1
+
+**La respuesta a esta operacion, puede ser un 204 o un 200, para indicar que se encontro al usuario.
+
+> HTTP/1.1 200 OK
+> Content-Type: application/json
+>
+> {<br>
+>   "id": "1"<br>
+>   "url": "http://localhost/Practica6/usuarios/1"<br>
+>   "nombre": "juan"<br>
+>   "apellido": "campodonico"<br>
+>   "email": "juan@gmail.com"<br>
+> }
 
 <ins>Listado de todos los usuarios</ins>
 
