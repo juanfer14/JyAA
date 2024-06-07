@@ -121,6 +121,33 @@ Para ello:
 
 <ins>Listado de todos los usuarios</ins>
 
+**La operacion apra consultar a todos los usuarios es GET**
+
+> GET /Practica6/usuarios/ HTTP/1.1
+
+**La respuesta a esta operacion es un 200, indicando que se encontraron todos los usuarios o 204 si no hay ninguno.**
+
+> HTTP/1.1 200 OK
+> Content-Type: application/json
+>
+> [
+>   {<br>
+>     "id": "1"<br>
+>     "url": "http://localhost/Practica6/usuarios/1"<br>
+>     "nombre": "juan"<br>
+>     "apellido": "campodonico"<br>
+>     "email": "juan@gmail.com"<br>
+>   },<br>
+>   {<br>
+>     "id": "2"<br>
+>     "url": "http://localhost/Practica6/usuarios/2"<br>
+>     "nombre": "lio"<br>
+>     "apellido": "campodonico"<br>
+>     "email": "lion@gmail.com"<br>
+>   },<br>
+>   ...
+> ]
+
 2. Desarrolle los servicios REST de las operaciones descriptas en el punto anterior usando alguna de las implementaciones de JAX-RS.
 
 3. Pruebe los servicios implementados en el ejercicio 2 utilizando una herramienta de testeo para generar los requerimientos. Podría usarse Postman (<https://www.postman.com/>).
