@@ -143,7 +143,7 @@ Para ello:
 >     "url": "http://localhost/Practica6/usuarios/2"<br>
 >     "nombre": "lio"<br>
 >     "apellido": "campodonico"<br>
->     "email": "lion@gmail.com"<br>
+>     "email": "lio@gmail.com"<br>
 >   },<br>
 >   ...<br>
 > ]
