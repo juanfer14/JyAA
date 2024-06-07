@@ -22,8 +22,14 @@ Para ello:
 
 * c. ¿Cómo es la petición HTTP para crear un nuevo **Usuario**? Defina el método HTTP, URI, cabecera y cuerpo de la petición.<br>
 
-**La peticion para crear un nuevo usuario es GET**
-> GET /Practica6/usuarios/<id> HTTP/1.1
+**La peticion para crear un nuevo usuario es POST**
+> POST /Practica6/usuarios/ HTTP/1.1
+> Content-type: application/json
+> {
+>   "nombre": "juan"
+>   "apellido": "campodonico"
+>   "email": "juan@gmail.com"
+> }
 
 * d. ¿Qué debería responder el servicio luego de crear el **Usuario**? ¿Para qué se utiliza _Location_ en la cabecera de la respuesta?<br>
 
@@ -32,6 +38,14 @@ Para ello:
 **_Location_ se utiliza para poder referenciar a la URI del recurso creado.**
 
 * e. Repita los incisos c y d para las siguientes operaciones: Baja de un **Usuario**, Modificación de un **Usuario**, Consulta de un **Usuario** por id, y Listado de todos los **Usuarios**.<br>
+
+<ins>Baja de un usuario</ins>
+
+<ins>Modificacion de un usuario</ins>
+
+<ins>Consulta de un usuario</ins>
+
+<ins>Listado de todos los usuarios</ins>
 
 2. Desarrolle los servicios REST de las operaciones descriptas en el punto anterior usando alguna de las implementaciones de JAX-RS.
 
