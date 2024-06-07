@@ -130,7 +130,7 @@ Para ello:
 > HTTP/1.1 200 OK
 > Content-Type: application/json
 >
-> [
+> [<br>
 >   {<br>
 >     "id": "1"<br>
 >     "url": "http://localhost/Practica6/usuarios/1"<br>
@@ -145,7 +145,7 @@ Para ello:
 >     "apellido": "campodonico"<br>
 >     "email": "lion@gmail.com"<br>
 >   },<br>
->   ...
+>   ...<br>
 > ]
 
 2. Desarrolle los servicios REST de las operaciones descriptas en el punto anterior usando alguna de las implementaciones de JAX-RS.
