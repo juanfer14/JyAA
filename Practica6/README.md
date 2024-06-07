@@ -33,13 +33,30 @@ Para ello:
 
 * d. ¿Qué debería responder el servicio luego de crear el **Usuario**? ¿Para qué se utiliza _Location_ en la cabecera de la respuesta?<br>
 
-**Deberia responder con el codigo de respuesta HTTP 201, indicando la creacion de un recurso.**
+**Deberia responder con el codigo de respuesta HTTP 201, indicando la creacion de un recurso y el JSON del usuario que se creo**
+> HTTP/1.1 201 Created<br>
+> Content-Type: application/json<br>
+> Location: http://localhost/Practica6/usuarios/1<br>
+>
+> {<br>
+>   "id": "1",<br>
+>   "url": "http://localhost/Practica6/usuarios/1",<br>
+>   "nombre": "juan"<br>
+>   "apellido": "campodonico"<br>
+>   "email": "juan@gmail.com"<br>
+> }
+
 
 **_Location_ se utiliza para poder referenciar a la URI del recurso creado.**
 
 * e. Repita los incisos c y d para las siguientes operaciones: Baja de un **Usuario**, Modificación de un **Usuario**, Consulta de un **Usuario** por id, y Listado de todos los **Usuarios**.<br>
 
 <ins>Baja de un usuario</ins>
+
+**La operacion para dar de baja un usuario es DELETE**
+> DELETE /Practica6/usuarios/1 HTTP/1.1<br>
+
+**Luego de la operacion, deberia responder con el codigo de respuesta 204, si no encontro el usuario o 200, para indicar que se borro el usuario.
 
 <ins>Modificacion de un usuario</ins>
 
