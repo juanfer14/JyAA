@@ -23,9 +23,6 @@ Para ello:
 * c. ¿Cómo es la petición HTTP para crear un nuevo **Usuario**? Defina el método HTTP, URI, cabecera y cuerpo de la petición.<br>
 
 **La peticion para crear un nuevo usuario es GET**
-
-> REQUEST:
-
 > GET /Practica6/usuarios/<id> HTTP/1.1
 
 * d. ¿Qué debería responder el servicio luego de crear el **Usuario**? ¿Para qué se utiliza _Location_ en la cabecera de la respuesta?<br>
